@@ -20,9 +20,6 @@ Project Structure:
 You can find the Rust functions and other codes in the following files:
 - `src\main.py`
 - `src\lib.py`
-
-
-
 These functions enable the downloading a dataset, transform it into a sqlite database, and read queries.
 ---
 
