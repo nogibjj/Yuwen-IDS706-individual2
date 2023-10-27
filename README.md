@@ -14,7 +14,10 @@ Project Structure:
 ![Alt text](<str.jpeg>)
 
 ---
+**Interaction with Copilot**
+Asked copilot to help transform original python code into rust and write the Makefile for command line tools
 
+---
 **Code Location**
 
 You can find the Rust functions and other codes in the following files:
