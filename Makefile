@@ -1,69 +1,61 @@
-# Variables
-RUST_TARGET = target/release/Mini8
-
-# Rust targets
+# Display Rust command-line utility versions
 rust-version:
 	@echo "Rust command-line utility versions:"
-	rustc --version 			# Rust compiler
-	cargo --version 			# Rust package manager
-	rustfmt --version			# Rust code formatter
-	rustup --version			# Rust toolchain manager
-	clippy-driver --version		# Rust linter
+	rustc --version              # Rust compiler
+	cargo --version              # Rust package manager
+	rustfmt --version            # Rust code formatter
+	rustup --version             # Rust toolchain manager
+	clippy-driver --version      # Rust linter
 
+# Format code using rustfmt
 format:
 	cargo fmt --quiet
 
-install:
-	# Install if needed
-	#@echo "Updating rust toolchain"
-	#rustup update stable
-	#rustup default stable 
-
+# Run clippy for linting
 lint:
 	cargo clippy --quiet
 
+# Run tests
 test:
 	cargo test --quiet
 
+# Build and run the project
 run:
 	cargo run
 
+# Build release version
 release:
 	cargo build --release
 
-# Python targets
-py_install:
-	pip install --upgrade pip &&\
-		pip install -r requirements.txt
+# Install Rust toolchain if needed
+install:
+	# Install if needed
+	# @echo "Updating rust toolchain"
+	# rustup update stable
+	# rustup default stable 
 
-py_test:
-	python3 -m pytest -vv --cov=main test_*.py
-
-py_format:	
-	black *.py 
-
-py_lint:
-	ruff check *.py
-
-py_container-lint:
-	docker run --rm -i hadolint/hadolint < Dockerfile
-
-py_deploy:
-	# Python deploy commands go here
-
-# Combined targets for convenience
+# Run all formatting, linting, and testing tasks
 all: format lint test run
 
-py_all: py_install py_lint py_test py_format py_deploy
+# Custom tasks
 
-generate_and_push:
-	# Add, commit, and push the generated files to GitHub
-	@if [ -n "$$(git status --porcelain)" ]; then \
-		git config --local user.email "action@github.com"; \
-		git config --local user.name "GitHub Action"; \
-		git add .; \
-		git commit -m "Add metric log"; \
-		git push; \
-	else \
-		echo "No changes to commit. Skipping commit and push."; \
-	fi
+# Extract iris data from url
+extract: 
+	cargo run extract
+
+# Load data to database
+transform:
+	cargo run transform
+# insert a new database entry
+insert:
+	cargo run query "INSERT INTO iris (sepal_length, sepal_width, petal_length, petal_width, species) VALUES (5.1, 3.5, 1.4, 0.2, 'new_species')"
+
+# Read last entry from the database
+read:
+	cargo run query "SELECT * FROM iris ORDER BY id DESC LIMIT 1"
+# Update first database entry
+update:
+	cargo run query "UPDATE iris SET sepal_length = 6.0 WHERE id = 1"
+# Delete last database entry
+delete:
+	cargo run query "DELETE FROM iris WHERE id = (SELECT max(id) FROM iris)"

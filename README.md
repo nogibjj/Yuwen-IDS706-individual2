@@ -1,36 +1,29 @@
-## Duke IDS 706 Data Engineering mini project 8 
+## Duke IDS 706 Data Engineering individual project # 2
 ---
 
-[![py_ci](https://github.com/nogibjj/Yuwen-IDS706-miniproject8/actions/workflows/py_cicd.yml/badge.svg)](https://github.com/nogibjj/Yuwen-IDS706-miniproject8/actions/workflows/py_cicd.yml)
 [![rs_ci](https://github.com/nogibjj/Yuwen-IDS706-miniproject8/actions/workflows/rs_cicd.yml/badge.svg)](https://github.com/nogibjj/Yuwen-IDS706-miniproject8/actions/workflows/rs_cicd.yml)
 
 ---
 
 **Summary**
 
-The objective of Week 8 mini project is to rewrite a Python Script in Rust and compare its performance in running time, memory usage and CPU usage.
+The objective of this individual project is for a set of Rust functions for performing ETL operations on a dataset and CRUD operations a SQLite database.
 
 ---
 
 **Code Location**
 
-You can find the original Python code in the following files:
-- `main.py`
-- `test_main.py`
-
-
-Rust code in the following files:
+You can find the Rust functions and other codes in the following files:
 - `src\main.py`
 - `src\lib.py`
 
 
 
-These functions enable the creation of a simple dataset and the calculation of its descriptive statistics in Python and Rust language.
-
+These functions enable the downloading a dataset and transform it into a sqlite database.
 ---
 
 
-**Python Result**
+**Rust Result**
 
 Make py_test result:
 ![Alt text](<py_test_result.png>)
