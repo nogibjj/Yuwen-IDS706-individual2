@@ -15,6 +15,7 @@ Project Structure:
 
 ---
 **Interaction with Copilot**
+
 Asked copilot to help transform original python code into rust and write the Makefile for command line tools
 
 ---
