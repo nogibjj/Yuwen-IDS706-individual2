@@ -45,8 +45,3 @@ jobs:
 
     - name: Pull latest changes
       run: git pull
-      
-
-          
-    - name: Generate and push logs
-      run: make generate_and_push
