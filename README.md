@@ -41,5 +41,19 @@ These functions enable the downloading a dataset, transform it into a sqlite dat
 
 **Rust Result**
 
-Make py_test result:
+Make result:
 ![Alt text](<cargo_result.png>)
+
+make insert result:
+![Alt text](<insert.png>)
+
+make read result:
+![Alt text](<read.png>)
+
+make update result:
+![Alt text](<update.png>)
+
+make delete result:
+![Alt text](<delete.png>)
+
+

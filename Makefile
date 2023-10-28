@@ -46,6 +46,8 @@ extract:
 # Load data to database
 transform:
 	cargo run transform
+
+	
 # insert a new database entry
 insert:
 	cargo run query "INSERT INTO iris (sepal_length, sepal_width, petal_length, petal_width, species) VALUES (5.1, 3.5, 1.4, 0.2, 'new_species')"
