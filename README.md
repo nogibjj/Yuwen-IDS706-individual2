@@ -3,6 +3,9 @@
 
 [![rs_ci](https://github.com/nogibjj/Yuwen-IDS706-individual2/actions/workflows/rs_cicd.yml/badge.svg)](https://github.com/nogibjj/Yuwen-IDS706-individual2/actions/workflows/rs_cicd.yml)
 
+Youtube Link: 
+https://youtu.be/MJBjX9fHs8E
+
 ---
 
 **Summary**
